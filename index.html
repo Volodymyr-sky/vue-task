@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue task</title>
+    <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+
+    <div class="container pt-5" id="app">
+        <div class="card center">
+            <h1>{{title}}</h1>
+            <div class="form-control">
+                <input type="text" 
+                v-bind:placeholder="placeholderStr" v-bind:value="inputValue"
+                @input="inputChangeHandler"
+                >
+            </div>
+            <h2>inputValue is: {{inputValue}} </h2>
+            <button class="btn" @click="addHandler">Add</button>
+
+            <ul class="list">
+                <li class="list-item" v-for="i in notes">
+                    {{i}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
